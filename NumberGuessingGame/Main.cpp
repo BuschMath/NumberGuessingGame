@@ -18,13 +18,22 @@ int main()
 	srand(unsigned int(time(NULL)));
 
 	// output to screen random number between 1 and 10
-	cout << rand() % 10 + 1 << endl;
+	int randomNumber = rand() % 10 + 1;
 
 	int userInput;
 
 	cin >> userInput;
 
 	cout << userInput << endl;
+
+	if (randomNumber == userInput)
+	{
+		cout << "Yay, you win!" << endl;
+	}
+	else
+	{
+		cout << "Your not very smart! " << randomNumber << endl;
+	}
 
 	return 0;
 }
