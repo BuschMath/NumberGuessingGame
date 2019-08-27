@@ -20,5 +20,11 @@ int main()
 	// output to screen random number between 1 and 10
 	cout << rand() % 10 + 1 << endl;
 
+	int userInput;
+
+	cin >> userInput;
+
+	cout << userInput << endl;
+
 	return 0;
 }
