@@ -22,18 +22,13 @@ int main()
 
 	int userInput;
 
+	cout << "Welcome to the number guessing game! Please guess a number between 1 and 10 then press enter: ";
+
 	cin >> userInput;
 
-	cout << userInput << endl;
+	cout << "\nYour number is : " << userInput << endl;
+	cout << "The random number is: " << randomNumber << endl;
 
-	if (randomNumber == userInput)
-	{
-		cout << "Yay, you win!" << endl;
-	}
-	else
-	{
-		cout << "Your not very smart! " << randomNumber << endl;
-	}
 
 	return 0;
 }
