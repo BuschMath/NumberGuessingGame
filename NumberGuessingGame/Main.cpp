@@ -12,6 +12,9 @@
 
 using namespace std;
 
+// Preconditions:	Included iostream and winning condition has been met.
+// Postconditions:	Winning message is outputed to standard output device and end line is 
+//					executed. 
 void won();
 
 int main()
@@ -23,28 +26,27 @@ int main()
 	int randomNumber = rand() % 10 + 1;
 
 	int userInput;
+	int guesses = 1;
 
 	cout << "Welcome to the number guessing game!\n\nYou will have three guesses. ";
-	cout << "Please guess a number between 1 and 10 then press enter : ";
-
-	cin >> userInput;
-
-	if (randomNumber == userInput)
-		won();
-	else
+	
+	while (guesses <= 3)
 	{
-		cout << "Your answer is incorrect. This is your second guess: ";
+		cout << "Please guess a number between 1 and 10 then press enter : ";
+
 		cin >> userInput;
+
 		if (randomNumber == userInput)
+		{
 			won();
+			guesses = 4;
+		}
 		else
 		{
-			cout << "You're still wrong. This is your final guess: ";
-			cin >> userInput;
-			if (randomNumber == userInput)
-				won();
-			else
-				cout << "You lost, loser!" << endl;
+			cout << "Your " << guesses++ << " is incorrect." << endl;
+
+			if (guesses >= 4)
+				cout << "You lost." << endl;
 		}
 	}
 
