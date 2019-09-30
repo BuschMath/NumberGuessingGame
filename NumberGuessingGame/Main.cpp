@@ -12,6 +12,8 @@
 
 using namespace std;
 
+void won();
+
 int main()
 {
 	// seed random number generator
@@ -22,18 +24,34 @@ int main()
 
 	int userInput;
 
-	cout << "Welcome to the number guessing game!\n\nPlease guess a number";
-	cout << " between 1 and 10 then press enter : ";
+	cout << "Welcome to the number guessing game!\n\nYou will have three guesses. ";
+	cout << "Please guess a number between 1 and 10 then press enter : ";
 
 	cin >> userInput;
 
-	cout << "\nYour number is : " << userInput << endl;
-	cout << "The random number is: " << randomNumber << endl;
-
 	if (randomNumber == userInput)
-		cout << "Congrats! You won!" << endl;
+		won();
 	else
-		cout << "You lost, loser!" << endl;
+	{
+		cout << "Your answer is incorrect. This is your second guess: ";
+		cin >> userInput;
+		if (randomNumber == userInput)
+			won();
+		else
+		{
+			cout << "You're still wrong. This is your final guess: ";
+			cin >> userInput;
+			if (randomNumber == userInput)
+				won();
+			else
+				cout << "You lost, loser!" << endl;
+		}
+	}
 
 	return 0;
+}
+
+void won()
+{
+	cout << "Congrats! You won!" << endl;
 }
